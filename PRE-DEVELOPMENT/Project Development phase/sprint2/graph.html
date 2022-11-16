@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>result</title>
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="myChart" ></canvas>
+<script type="text/javascript">
+	
+	function myFunction() {
+
+var a = document.getElementById('sm1').value;
+		var b = document.getElementById('sm2').value;
+		var c = document.getElementById('sm3').value;
+		
+		var d = document.getElementById('it1').value;
+		var e = document.getElementById('it2').value;
+		var f = document.getElementById('it3').value;
+
+		var g = document.getElementById('tran1').value;
+		var h = document.getElementById('tran2').value;
+		var i = document.getElementById('tran3').value;
+
+		var j = document.getElementById('dev1').value;
+		var k = document.getElementById('dev2').value;
+		var l = document.getElementById('dev3').value;
+
+		var m = document.getElementById('cre1').value;
+		var n = document.getElementById('cre2').value;
+		var o = document.getElementById('cre3').value;
+
+
+
+ 		var sm =parseInt(a)+parseInt(b)+parseInt(c);
+
+ 		var ite =parseInt(d)+parseInt(e)+parseInt(f);
+
+ 		var trns =parseInt(g)+parseInt(h)+parseInt(i);
+
+ 		var deve =parseInt(a)+parseInt(b)+parseInt(c);
+
+ 		var des =parseInt(m)+parseInt(n)+parseInt(o);
+ 	
+    var grp=[sm,ite,trns,deve,des,grp];
+
+	const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Sales&Marketing', 'IT&Engineering', 'Translation', 'Development', 'Designing'],
+        datasets: [{
+            label: 'RESULTS',
+            data: grp,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+    var button = document.createElement("button");
+button.innerHTML = "GET JOB RECOMMENDATION";
+
+// 2. Append somewhere
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+
+// 3. Add event handler
+button.addEventListener ("click", function() {if (sm>ite && sm>trns && sm>deve && sm>des)
+{
+    window.open("https://www.naukri.com/sales-jobs");
+}
+else if (ite>sm && ite>trans && ite>deve && ite>des)
+{
+    window.open("https://www.naukri.com/it-jobs");
+}
+else if (trns>sm && trns>ite && trns>deve && trns>des)
+{
+    window.open("https://www.naukri.com/translation-jobs");
+}
+else if (deve>sm && deve>ite && deve>trns && deve>des)
+{
+    window.open("https://www.naukri.com/development-jobs");
+}
+else
+{
+    window.open("https://www.naukri.com/designing-jobs");
+}
+
+});
+
+
+
+
+}
+
+</script>
+</body>
+</html>
